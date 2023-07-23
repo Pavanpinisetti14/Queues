@@ -12,11 +12,13 @@ public class Queue_linked {
     void enqueue(){
 
         Node newnode = new Node();
-         System.out.println("Enter Data:");
+        System.out.println("Enter Data:");
         Scanner sc = new Scanner(System.in);
         newnode.data = sc.nextInt();
+
         if(front == null){
             front = newnode;
+            rear = newnode;
         }
         else{
             newnode.next = front;
@@ -27,21 +29,21 @@ public class Queue_linked {
         // front = front.next;
         System.out.println("OKK!");
         if(rear == null){
-            rear = front ;
             System.out.println("OK!");
+            System.exit(-1);
         }
         else{
             
-            int ele = rear.data;
+            Node newwNode = rear;
             rear = rear.next;
-            System.out.println("Data ::"+ele);
+            System.out.println("Data ::"+newwNode.data);
             
         }
     }
     void display(){
         Node temp = front;
         while(temp != null){
-            System.out.println(temp.data+"->");
+            System.out.print(temp.data+"->");
             temp = temp.next;
         }
     }
